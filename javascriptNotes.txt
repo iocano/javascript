@@ -1,0 +1,99 @@
+Syntax parser
+    Read code and check if the grammar is correct.
+
+When a javascript runs, JS engine perform the following functions:
+    1. Creates a global execution environment (stored as GlobalEnv property)
+    2. Instantiates a CALL STACK (LIFO) used to store and keep track of running functions
+        When a function is run, it is pushed on top of the global call stack,
+        once the function terminates, it is popped off
+        First function pushed onto the GLOBAL CALL STACK is the global execution thread (global() or main())
+    3. Set aside global memory, where it store variables globally accessible across the script (referred as HOISTING) (VARIABLE ENVIRONMENT)
+    HOISTING 
+        Read entire script from top to bottom (before running any function) and move variable to the top of their scope
+        Variables that stores function return value has a undefined value
+    4. Push first function call to the GLOBAL CALL STACK
+    5. Generate a LEXICAL EXECUTION ENVIRONMENT (new environment inside global environment), consisting two parts:
+        OUTER ENVIRONMENT REFERENCE (in global environment, his outer environment reference is NULL)
+        VARIABLE ENVIRONMENT (representation of the lexical environment),
+            refers to the variables defined within the scope of the given function
+    6. Pop function of the call stack when ends 
+    7. Repeat 4-6 while call to functions exists
+    8. Pop global() thread when script is completed
+
+Execution context
+    is the environment in which the JS code is executed
+
+Name/Value pair
+    A name which maps to a unique value
+
+Object
+    Is a non-primitive data type in JavaScript. 
+    holds multiple values in terms of properties and methods.
+    Properties can hold values of primitive data types and methods are functions. 
+
+Global object (windows) = this (global execution context)
+
+Associativity: 
+    What order operator get called in: left-to-right or right-to-left
+
+Coercion:
+    Converting a value from one type to another
+
+First class function
+    Functions are treated as any other variable
+    *Functions are objects
+
+Expression
+    Unit of code that results in a value
+
+Objects     are passed by reference (including functions)(Mutable)
+Primitives  are passed by value
+
+IIFE
+    Immediately Invoked Function Expression
+    var result = (function(){...}());
+
+Closure
+    is the combination of a function bundled together (enclosed) with references to 
+    its surrounding state (the lexical environment)
+
+Factory function
+    A factory function is any function which is not a class or constructor 
+    that returns a (presumably new) object. 
+
+Callback function 
+    is a function passed into another function as an argument,
+    which is then invoked inside the outer function to complete some kind of routine or action.
+
+bind()
+    creates a new function that, when called, has its 'this' keyword set to the provided value, 
+    with a given sequence of arguments preceding any provided when the new function is called.
+
+call()
+    method calls a function with a given this value and arguments provided individually
+
+apply()
+    method calls a function with a given this value,
+    and arguments provided as an array (or an array-like object).
+
+Function borrowing
+    allows us to use the methods of one object on a different object
+    without having to make a copy of that method and maintain it in two separate places.
+
+Currying 
+    is a transformation of functions that translates a function from callable as f(a, b, c)
+    into callable as f(a)(b)(c).
+    In others words create a copy of a function but with preset parameters
+
+Inheritance
+    Object gets access to the properties and methods of another object
+
+Polyfill 
+    is a piece of code used to provide modern functionality on older browsers 
+    that do not natively support it.
+
+Transpile
+    Convert syntax of one programming language to another
+
+let var
+
